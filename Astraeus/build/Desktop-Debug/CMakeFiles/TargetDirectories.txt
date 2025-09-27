@@ -1,0 +1,9 @@
+/home/werewolf-leader/Astraeus/Astraeus/build/Desktop-Debug/CMakeFiles/Astraeus.dir
+/home/werewolf-leader/Astraeus/Astraeus/build/Desktop-Debug/CMakeFiles/edit_cache.dir
+/home/werewolf-leader/Astraeus/Astraeus/build/Desktop-Debug/CMakeFiles/rebuild_cache.dir
+/home/werewolf-leader/Astraeus/Astraeus/build/Desktop-Debug/CMakeFiles/list_install_components.dir
+/home/werewolf-leader/Astraeus/Astraeus/build/Desktop-Debug/CMakeFiles/install.dir
+/home/werewolf-leader/Astraeus/Astraeus/build/Desktop-Debug/CMakeFiles/install/local.dir
+/home/werewolf-leader/Astraeus/Astraeus/build/Desktop-Debug/CMakeFiles/install/strip.dir
+/home/werewolf-leader/Astraeus/Astraeus/build/Desktop-Debug/CMakeFiles/Astraeus_autogen_timestamp_deps.dir
+/home/werewolf-leader/Astraeus/Astraeus/build/Desktop-Debug/CMakeFiles/Astraeus_autogen.dir
