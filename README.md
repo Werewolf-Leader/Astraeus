@@ -12,7 +12,7 @@ depends on the laptop, kernel, and services installed on the system.
 
 ### Performance and fan curve
 
-![Boreas performance view](docs/screenshots/performance-view.png)
+![Boreas performance view](docs/screenshots/performance-view-updated.png)
 
 ### Battery and advanced power limits
 
