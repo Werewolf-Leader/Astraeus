@@ -2,7 +2,7 @@ pragma Singleton
 
 import QtQuick
 
-// Shared visual theme for the Boreas UI (G-Helper-inspired dark restyle).
+// Shared visual theme for the Boreas UI.
 //
 // A QML singleton so every component references one source of truth for colors,
 // spacing, radii, and fonts. Registered in the BoreasApp module via a
@@ -12,34 +12,31 @@ QtObject {
     id: theme
 
     // ---- Surfaces --------------------------------------------------------
-    readonly property color background:  "#12141a"   // window backdrop
-    readonly property color surface:     "#1a1d26"   // card background
-    readonly property color surfaceAlt:  "#222634"   // raised / hover
-    readonly property color border:      "#2c3040"   // hairline separators
+    readonly property color background:  "#111111"
+    readonly property color surface:     "#191919"
+    readonly property color surfaceAlt:  "#242424"
+    readonly property color border:      "#3a3a3a"
 
     // ---- Text ------------------------------------------------------------
-    readonly property color text:        "#eef1f7"
-    readonly property color textMuted:   "#8b90a0"
-    readonly property color textFaint:   "#5b6070"
+    readonly property color text:        "#f2f2f2"
+    readonly property color textMuted:   "#aaaaaa"
+    readonly property color textFaint:   "#707070"
 
     // ---- Accent / status -------------------------------------------------
-    readonly property color accent:      "#4c8dff"   // primary accent (selection)
-    readonly property color accentSoft:  "#2a3960"   // accent-tinted fill
-    readonly property color success:     "#3ecf8e"
-    readonly property color warning:     "#ffb454"
-    readonly property color danger:      "#ff5c5c"
+    readonly property color accent:      "#d8d8d8"
+    readonly property color accentSoft:  "#333333"
+    readonly property color success:     "#d8d8d8"
+    readonly property color warning:     "#bdbdbd"
+    readonly property color danger:      "#ffffff"
 
-    // Per-profile accent tint (segmented profile buttons).
+    // Keep profile selection monochrome; the label carries the meaning.
     function profileColor(name) {
-        if (name === "Quiet")       return "#3ecf8e";
-        if (name === "Balanced")    return "#4c8dff";
-        if (name === "Performance") return "#ff7a59";
         return theme.accent;
     }
 
     // ---- Metrics ---------------------------------------------------------
-    readonly property int radius:      10
-    readonly property int radiusSmall: 6
+    readonly property int radius:      2
+    readonly property int radiusSmall: 2
     readonly property int gap:         12
     readonly property int gapSmall:    8
     readonly property int pad:         14

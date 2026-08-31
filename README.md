@@ -94,13 +94,11 @@ be unavailable even when the rest of the application works.
 .
 ├── qml/       Application UI
 ├── tests/     Unit, property, and integration tests
-├── docs/      Hardware notes and screenshots
-├── RyzenAdj/  Optional RyzenAdj source tree
-└── ryzen_smu/ Optional kernel-driver source tree
+└── docs/      Hardware notes and screenshots
 ```
 
-The `RyzenAdj` and `ryzen_smu` directories are supporting source trees; Boreas
-does not build the kernel module as part of its normal CMake build.
+Optional tools such as `ryzenadj`, `asusd`, and `supergfxctl` are detected at
+runtime and are not bundled with this repository.
 
 ## License
 
