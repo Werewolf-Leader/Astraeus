@@ -1,0 +1,35 @@
+# CMake build output
+build/
+
+# Qt Creator / IDE files
+*.pro.user
+*.qmlc
+CMakeLists.txt.user
+
+# Kiro IDE workspace files
+.kiro/
+
+# Screenshots and images (not project assets)
+*.png
+*.jpg
+*.jpeg
+
+# ryzen_smu kernel module clone (external dependency, not our code)
+ryzen_smu/
+
+# RyzenAdj build directory if cloned here
+RyzenAdj/
+
+# OS / editor junk
+.DS_Store
+*~
+*.swp
+*.swo
+
+# Compiled object files
+*.o
+*.a
+*.so
+
+# QML cache
+*.qmlc
