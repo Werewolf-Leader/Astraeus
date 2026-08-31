@@ -9,10 +9,12 @@ CMakeLists.txt.user
 # Kiro IDE workspace files
 .kiro/
 
-# Screenshots and images (not project assets)
+# Screenshots and images, except documentation assets
 *.png
 *.jpg
 *.jpeg
+!docs/screenshots/
+!docs/screenshots/*.png
 
 # ryzen_smu kernel module clone (external dependency, not our code)
 ryzen_smu/

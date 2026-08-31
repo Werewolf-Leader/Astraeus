@@ -91,7 +91,7 @@ if(BOREAS_BUILD_TESTS)
     # Property 4: persistence round-trip and profile isolation.
     qt_add_executable(tst_property4_persistence
         tests/tst_property4_persistence.cpp
-        Fakes.h
+        tests/Fakes.h
         DataModels.h
         PlatformAccess.h
     )
@@ -120,7 +120,7 @@ if(BOREAS_BUILD_TESTS)
         DBusAccess.h
         RyzenAdjAccess.cpp
         RyzenAdjAccess.h
-        Fakes.h
+        tests/Fakes.h
         DataModels.h
         PlatformAccess.h
     )
@@ -151,7 +151,7 @@ if(BOREAS_BUILD_TESTS)
         DBusAccess.h
         RyzenAdjAccess.cpp
         RyzenAdjAccess.h
-        Fakes.h
+        tests/Fakes.h
         DataModels.h
         PlatformAccess.h
     )
@@ -182,7 +182,7 @@ if(BOREAS_BUILD_TESTS)
         DBusAccess.h
         RyzenAdjAccess.cpp
         RyzenAdjAccess.h
-        Fakes.h
+        tests/Fakes.h
         DataModels.h
         PlatformAccess.h
     )
@@ -213,7 +213,7 @@ if(BOREAS_BUILD_TESTS)
         DBusAccess.h
         RyzenAdjAccess.cpp
         RyzenAdjAccess.h
-        Fakes.h
+        tests/Fakes.h
         DataModels.h
         PlatformAccess.h
     )
@@ -245,7 +245,7 @@ if(BOREAS_BUILD_TESTS)
         DBusAccess.h
         RyzenAdjAccess.cpp
         RyzenAdjAccess.h
-        Fakes.h
+        tests/Fakes.h
         DataModels.h
         PlatformAccess.h
     )
@@ -278,7 +278,7 @@ if(BOREAS_BUILD_TESTS)
         DBusAccess.h
         RyzenAdjAccess.cpp
         RyzenAdjAccess.h
-        Fakes.h
+        tests/Fakes.h
         DataModels.h
         PlatformAccess.h
     )
@@ -312,7 +312,7 @@ if(BOREAS_BUILD_TESTS)
         DBusAccess.h
         RyzenAdjAccess.cpp
         RyzenAdjAccess.h
-        Fakes.h
+        tests/Fakes.h
         DataModels.h
         PlatformAccess.h
     )
@@ -346,7 +346,7 @@ if(BOREAS_BUILD_TESTS)
         DBusAccess.h
         RyzenAdjAccess.cpp
         RyzenAdjAccess.h
-        Fakes.h
+        tests/Fakes.h
         DataModels.h
         PlatformAccess.h
     )
@@ -381,7 +381,7 @@ if(BOREAS_BUILD_TESTS)
         DBusAccess.h
         RyzenAdjAccess.cpp
         RyzenAdjAccess.h
-        Fakes.h
+        tests/Fakes.h
         DataModels.h
         PlatformAccess.h
     )
@@ -415,7 +415,7 @@ if(BOREAS_BUILD_TESTS)
         DBusAccess.h
         RyzenAdjAccess.cpp
         RyzenAdjAccess.h
-        Fakes.h
+        tests/Fakes.h
         DataModels.h
         PlatformAccess.h
     )
@@ -449,7 +449,7 @@ if(BOREAS_BUILD_TESTS)
         DBusAccess.h
         RyzenAdjAccess.cpp
         RyzenAdjAccess.h
-        Fakes.h
+        tests/Fakes.h
         DataModels.h
         PlatformAccess.h
     )
