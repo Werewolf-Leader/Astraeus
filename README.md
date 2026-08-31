@@ -40,7 +40,6 @@ at runtime rather than assuming every ASUS model has the same interfaces.
 - A C++17 compiler
 - Qt 6.5 or newer with Core, Gui, Quick, Qml, DBus, and Test
 - `supergfxctl` for GPU mode support, if available on the system
-- `asusd` for fan curves on systems that use its D-Bus interface
 - `ryzenadj` for the experimental advanced power controls
 
 The test build fetches [RapidCheck](https://github.com/emil-e/rapidcheck)
@@ -76,8 +75,10 @@ laptop.
 
 ## Hardware notes
 
-Boreas talks to a mix of Linux sysfs attributes and D-Bus services. The exact
-dependencies and fallback behavior are documented in
+Boreas uses Linux sysfs attributes for the hardware controls on Ubuntu and
+uses D-Bus for GPU mode detection when `supergfxctl` is available. `asusd` is
+not required for the Ubuntu setup. The exact dependencies and fallback behavior
+are documented in
 [`docs/hardware-dependency-map.md`](docs/hardware-dependency-map.md).
 
 Some power-limit writes can block or fail on particular kernels. Boreas puts a
@@ -97,8 +98,8 @@ be unavailable even when the rest of the application works.
 └── docs/      Hardware notes and screenshots
 ```
 
-Optional tools such as `ryzenadj`, `asusd`, and `supergfxctl` are detected at
-runtime and are not bundled with this repository.
+Optional tools such as `ryzenadj` and `supergfxctl` are detected at runtime and
+are not bundled with this repository.
 
 ## License
 

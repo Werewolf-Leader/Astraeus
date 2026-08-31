@@ -40,9 +40,9 @@ The following controls are detected: `PowerProfile`, `GpuMode`, `FanCurve`,
 
 | Control | Backing sysfs path(s) | D-Bus interface (primary / fallback) | Behavior when missing (exact `Unavailable_State` message) |
 |---|---|---|---|
-| **Power profile** | `/sys/firmware/acpi/platform_profile` (+ `/sys/firmware/acpi/platform_profile_choices`); ASUS `throttle_thermal_policy` under `/sys/devices/platform/asus-nb-wmi/` | `org.asuslinux.Daemon` (asusd) — used as fallback when the ACPI attribute is absent | Disabled. `"Power profile control not available (platform_profile missing and asusd unavailable)"` |
+| **Power profile** | `/sys/firmware/acpi/platform_profile` (+ `/sys/firmware/acpi/platform_profile_choices`); ASUS `throttle_thermal_policy` under `/sys/devices/platform/asus-nb-wmi/` | Optional `org.asuslinux.Daemon` fallback; not required on Ubuntu | Disabled when the sysfs attribute and optional fallback are unavailable. |
 | **GPU mode** | — (D-Bus only) | `org.supergfxctl.Daemon` (supergfxctl) | Disabled. `"supergfxctl D-Bus service not available"` if the service is down; `"supergfxctl reported no supported GPU modes"` if the service is up but reports no usable modes. **supergfxctl is being phased out — presence is not guaranteed (see caveat).** |
-| **Fan curve** | asus-wmi `pwmN_auto_pointX_temp` / `pwmX` under hwmon | `org.asuslinux.Daemon` (asusd) `FanCurves`, per-profile | Disabled. Exact string `"Fan curve control not supported by current driver"` (Req 6.11). |
+| **Fan curve** | Kernel-native `asus_custom_fan_curve` `pwmN_auto_pointX_temp` / `pwmX` attributes under hwmon | Optional `org.asuslinux.Daemon` fallback; not required on Ubuntu | Disabled. Exact string `"Fan curve control not supported by current driver"` (Req 6.11). |
 | **CPU temperature** | `/sys/class/hwmon/hwmon0/temp1_input` (coretemp / k10temp), millidegrees | — | Readout shows `"—"`; `readFailed` banner. See temperature-read messages below. |
 | **GPU temperature** | `/sys/class/hwmon/hwmon1/temp1_input` (amdgpu / nvidia), millidegrees | — | **May be absent.** Readout shows `"—"`; capability reason `"GPU temperature sensor unavailable"` while CPU still works. |
 | **Temperature threshold** | (no guaranteed hardware target; `/sys/devices/platform/asus-nb-wmi/throttle_thermal_policy` probed to decide hardware-vs-soft) | — | **Always available** as a Boreas-side soft limit. Labeled a monitoring/warning value unless a real driver throttle target is detected (Req 7.5, 7.6). |
@@ -56,8 +56,8 @@ The following controls are detected: `PowerProfile`, `GpuMode`, `FanCurve`,
 ### Power profile
 
 - **Primary:** the ACPI `platform_profile` attribute (`ISysfsAccess::exists`).
-- **Fallback:** the asusd D-Bus service (`org.asuslinux.Daemon`).
-- **Supported** if either the sysfs attribute exists or asusd is available.
+- **Fallback:** the optional asusd D-Bus service (`org.asuslinux.Daemon`).
+- **Supported** if the sysfs attribute exists or the optional fallback is available.
 - **Unavailable message:**
   `"Power profile control not available (platform_profile missing and asusd unavailable)"`
 - **Read-path failures** (surfaced via `readFailed`, retain last-known value):
@@ -80,7 +80,9 @@ The following controls are detected: `PowerProfile`, `GpuMode`, `FanCurve`,
 
 ### Fan curve
 
-- **Backing:** asusd `FanCurves` support, probed via
+- **Primary on Ubuntu:** the kernel-native `asus_custom_fan_curve` hwmon driver,
+  which lets Boreas write fan curves directly to sysfs without asusd.
+- **Optional fallback:** asusd `FanCurves` support, probed via
   `IDBusAccess::fanCurvesSupported()`.
 - **Unavailable message (exact, Req 6.11):**
   `"Fan curve control not supported by current driver"`
